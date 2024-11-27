@@ -1,0 +1,32 @@
+{
+  "agendas":[
+    {
+      "id":1,
+      "title":"Prova do Glauco",
+      "description":"Prova do Glauco vai cair java",
+      "date_hora":"2024-12-02 08:00:00",
+      "local":"lab 6"
+    },
+    {
+      "id":2,
+      "title":"Prova de estatistica",
+      "description":"Prova do chico ",
+      "date_hora":"2024-12-01 08:00:00",
+      "local":"lab 4"
+    },
+    {
+      "id":3,
+      "title":"Entrega do trabalho",
+      "description":"Entrega do trabalho de engenharia de software 2",
+      "date_hora":"2024-12-05 08:00:00",
+      "local":"lab 3"
+    },
+    {
+      "id":4,
+      "title":"Entrega do trabalho",
+      "description":"Entrega do trabalho de PLA",
+      "date_hora":"2024-12-06 08:00:00",
+      "local":"lab 4"
+    }
+  ]
+}
