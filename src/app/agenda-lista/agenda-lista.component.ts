@@ -26,8 +26,10 @@ export class AgendaListaComponent {
       next:() => this.loadAgendas()
     });
     }
-  loadAgendas() {
-    throw new Error('Method not implemented.');
+  loadAgendas(): void {
+    this.agendaService.getAgendas().subscribe(data => {
+      this.agendas = data;
+    })
   }
 
 }
