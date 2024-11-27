@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { Agenda } from '../agenda';
 import { AgendaService } from '../agenda.service';
@@ -9,6 +10,7 @@ import { AgendaService } from '../agenda.service';
   styleUrl: './agenda-lista.component.css'
 })
 export class AgendaListaComponent {
+
   agendas: Agenda[] = [];
 
   constructor(private agendaService: AgendaService) { }
@@ -17,6 +19,15 @@ export class AgendaListaComponent {
     this.agendaService.getAgendas().subscribe(data => {
       this.agendas = data;
     });
+  }
+
+  delete(agenda: Agenda) {
+    this.agendaService.delete(agenda).subscribe({
+      next:() => this.loadAgendas()
+    });
+    }
+  loadAgendas() {
+    throw new Error('Method not implemented.');
   }
 
 }
