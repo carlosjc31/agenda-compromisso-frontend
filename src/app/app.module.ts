@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AgendaListaComponent } from './agenda-lista/agenda-lista.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AgendaFormComponent } from './agenda-form/agenda-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,10 +17,12 @@ import { AgendaFormComponent } from './agenda-form/agenda-form.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgModule,
+    ReactiveFormsModule
   ],
   providers: [
-    provideClientHydration(withEventReplay())
+    provideClientHydration()
   ],
   bootstrap: [AppComponent]
 })
