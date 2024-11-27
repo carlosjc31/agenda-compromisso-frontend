@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Agenda } from '../agenda';
+import { AgendaService } from '../agenda.service';
 
 @Component({
   selector: 'app-agenda-lista',
@@ -8,6 +9,14 @@ import { Agenda } from '../agenda';
   styleUrl: './agenda-lista.component.css'
 })
 export class AgendaListaComponent {
-agendas: Agenda[] = [];
+  agendas: Agenda[] = [];
+
+  constructor(private agendaService: AgendaService) { }
+
+  ngOnInit(): void {
+    this.agendaService.getAgendas().subscribe(data => {
+      this.agendas = data;
+    });
+  }
 
 }
