@@ -1,4 +1,4 @@
-<p>agenda-lista works!</p>
+<p>Agenda de Compromisso</p>
 <table class="table">
   <thead>
       <tr>
@@ -12,7 +12,7 @@
   <tbody>
     <tr *ngFor="let agenda of agendas">
       <th scope="row">{{agenda.id}}</th>
-      <td>{{agenda.title}}</td>
+      <td><a routerLink="/agendas/{{agenda.id}}">{{agenda.title}}</a></td>
       <td>{{agenda.description}}</td>
       <td>{{agenda.date_hora}}</td>
       <td>{{agenda.local}}</td>
