@@ -17,13 +17,11 @@ import { NavbarComponent } from './navbar/navbar.component';
     AgendaFormComponent,
     HomeComponent,
     NavbarComponent,
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgModule,
     ReactiveFormsModule
   ],
   providers: [
