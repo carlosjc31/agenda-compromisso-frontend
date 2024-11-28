@@ -12,12 +12,12 @@ export class AgendaService {
 
   constructor(private http: HttpClient) { }
 
-  getAgendas(): Observable<Agenda[]> {
-    return this.http.get<Agenda[]>(this.url);
+  getAgendasById(id: number): Observable<Agenda> {
+    return this.http.get<Agenda>(`${this.url}/${id}`);
   }
 
-delete(agenda: Agenda): Observable<void> {
-  return this.http.delete<void>(`${this.url}/${agenda.id}`);
+updade(agenda: Agenda): Observable<Agenda> {
+  return this.http.put<Agenda>(`${this.url}/${agenda.id}`, agenda);
 }
 
 }

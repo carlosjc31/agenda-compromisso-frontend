@@ -18,6 +18,7 @@
           <label for="local" class="form-label">Local</label>
           <input type="text" formControlName="local" class="form-control" id="local" placeholder="Digite o local do compromisso">
       </div>
-      <button type="submit" class="btn btn-primary">Cadastrar</button>
+      <button *ngIf="isEditing" type="button" class="btn btn-primary" (click)="update()">Atualizar</button>
+      <button *ngIf="!isEditing" type="button" class="btn btn-primary" (click)="save()">Cadastrar</button>
     </form>
 </div>
