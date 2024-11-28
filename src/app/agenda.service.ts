@@ -7,23 +7,28 @@ import { Agenda } from './agenda';
   providedIn: 'root'
 })
 export class AgendaService {
-  delete(agenda: Agenda) {
-    throw new Error('Method not implemented.');
-  }
-  getAgendas() {
-    throw new Error('Method not implemented.');
-  }
 
   private url = 'http://localhost:3000/agendas';
 
   constructor(private http: HttpClient) { }
 
+  getAgendas(): Observable<Agenda[]> {
+    return this.http.get<Agenda[]>(this.url);
+  }
+
   getAgendasById(id: number): Observable<Agenda> {
     return this.http.get<Agenda>(`${this.url}/${id}`);
   }
 
-updade(agenda: Agenda): Observable<Agenda> {
-  return this.http.put<Agenda>(`${this.url}/${agenda.id}`, agenda);
-}
+  delete(agenda: Agenda): Observable<void> {
+    return this.http.delete<void>(`${this.url}/${agenda.id}`);
+  }
+  updade(agenda: Agenda): Observable<Agenda> {
+    return this.http.put<Agenda>(`${this.url}/${agenda.id}`, agenda);
+  }
+
+  save(agenda: Agenda): Observable<Agenda> {
+    return this.http.post<Agenda>(this.url, agenda);
+  }
 
 }
