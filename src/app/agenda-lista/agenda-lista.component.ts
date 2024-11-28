@@ -1,7 +1,8 @@
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Agenda } from '../agenda';
 import { AgendaService } from '../agenda.service';
+import { Router } from 'express';
 
 @Component({
   selector: 'app-agenda-lista',
@@ -9,15 +10,20 @@ import { AgendaService } from '../agenda.service';
   templateUrl: './agenda-lista.component.html',
   styleUrl: './agenda-lista.component.css'
 })
-export class AgendaListaComponent {
+export class AgendaListaComponent implements OnInit {
 
   agendas: Agenda[] = [];
 
-  constructor(private agendaService: AgendaService) { }
+  constructor(private agendaService: AgendaService,
+              private router: Router
+  ) {}
 
-  ngOnInit(): void {
-    this.agendaService.getAgendas().subscribe(data => {
-      this.agendas = data;
+  ngOnInit() {
+    this.loadAgendas();
+    }
+  loadAgendas() {
+    this.agendaService.getAgendas().subscribe({
+      next: data => this.agendas = data
     });
   }
 
@@ -26,10 +32,8 @@ export class AgendaListaComponent {
       next:() => this.loadAgendas()
     });
     }
-  loadAgendas(): void {
-    this.agendaService.getAgendas().subscribe(data => {
-      this.agendas = data;
-    })
-  }
 
+  create() {
+    this.router.navigate(['/agendas']);
+    }
 }
