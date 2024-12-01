@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Router } from 'express';
+import { Router } from '@angular/router';
 import { AgendaService } from '../agenda.service';
 
 @Component({

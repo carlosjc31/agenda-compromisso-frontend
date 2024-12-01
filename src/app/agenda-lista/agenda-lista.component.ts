@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Agenda } from '../agenda';
 import { AgendaService } from '../agenda.service';
-import { Router } from 'express';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-agenda-lista',
