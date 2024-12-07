@@ -18,22 +18,20 @@ export class AgendaListaComponent implements OnInit {
               private router: Router
   ) {}
 
-  ngOnInit() {
-    this.loadAgendas();
+  ngOnInit(): void {
+    this.agendaService.getAgendas().subscribe(data =>{
+      this.agendas = data;
+    });
+    }
+
+    delete(agenda: Agenda){
+      this.agendaService.delete(agenda).subscribe({
+        next: () => this.loadAgendas()
+      });
     }
   loadAgendas() {
-    this.agendaService.getAgendas().subscribe({
-      next: data => this.agendas = data
-    });
+    throw new Error('Method not implemented.');
   }
 
-  delete(agenda: Agenda) {
-    this.agendaService.delete(agenda).subscribe({
-      next:() => this.loadAgendas()
-    });
-    }
 
-  create() {
-    this.router.navigate(['/agendas']);
-    }
-}
+  }

@@ -16,19 +16,7 @@ export class AgendaService {
     return this.http.get<Agenda[]>(this.url);
   }
 
-  getAgendasById(id: number): Observable<Agenda> {
-    return this.http.get<Agenda>(`${this.url}/${id}`);
+  delete(agenda: Agenda): Observable<void>{
+     return this.http.delete<void>(`${this.url}/${agenda.id}`);
   }
-
-  delete(agenda: Agenda): Observable<void> {
-    return this.http.delete<void>(`${this.url}/${agenda.id}`);
-  }
-  updade(agenda: Agenda): Observable<Agenda> {
-    return this.http.put<Agenda>(`${this.url}/${agenda.id}`, agenda);
-  }
-
-  save(agenda: Agenda): Observable<Agenda> {
-    return this.http.post<Agenda>(this.url, agenda);
-  }
-
 }
