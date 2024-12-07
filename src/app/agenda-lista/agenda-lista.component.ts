@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
   styleUrl: './agenda-lista.component.css'
 })
 export class AgendaListaComponent implements OnInit {
+create() {
+throw new Error('Method not implemented.');
+}
 
   agendas: Agenda[] = [];
 

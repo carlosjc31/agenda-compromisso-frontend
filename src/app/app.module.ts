@@ -11,23 +11,23 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     AgendaListaComponent,
     AgendaFormComponent,
-    HomeComponent,
-    NavbarComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-
+    NgbModule
   ],
   providers: [
-
+    provideClientHydration()
   ],
   bootstrap: [AppComponent]
 })
