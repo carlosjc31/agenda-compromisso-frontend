@@ -11,9 +11,7 @@ import { Router } from '@angular/router';
   styleUrl: './agenda-lista.component.css'
 })
 export class AgendaListaComponent implements OnInit {
-create() {
-throw new Error('Method not implemented.');
-}
+
 
   agendas: Agenda[] = [];
 
@@ -32,9 +30,14 @@ throw new Error('Method not implemented.');
         next: () => this.loadAgendas()
       });
     }
-  loadAgendas() {
-    throw new Error('Method not implemented.');
+  loadAgendas(): void {
+    this.agendaService.getAgendas().subscribe(data =>{
+      this.agendas = data;
+    });
   }
 
+  create() {
+    this.router.navigate(['/agenda']);
+    }
 
   }
