@@ -17,6 +17,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppComponent,
     AgendaListaComponent,
     AgendaFormComponent,
+    HomeComponent,
+    NavbarComponent
 
   ],
   imports: [
