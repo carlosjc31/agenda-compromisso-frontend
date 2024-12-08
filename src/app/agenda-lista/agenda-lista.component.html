@@ -1,6 +1,6 @@
 
 <div class="container">
-  <div class="display-5">
+  <div class="display-10">
     Agenda de Compromisso
   </div>
   <button class="btn btn-primary" (click)="create()" >Novo</button>
@@ -16,7 +16,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let agenda of agendas">
-        <th scope="row">{{agenda.id}}</th>
+        <th >{{agenda.id}}</th>
         <td><a routerLink="/agendas/{{agenda.id}}">{{agenda.title}}</a></td>
         <td>{{agenda.description}}</td>
         <td>{{agenda.date_hora}}</td>
