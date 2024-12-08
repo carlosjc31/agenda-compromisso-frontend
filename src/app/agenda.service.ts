@@ -8,7 +8,7 @@ import { Agenda } from './agenda';
 })
 export class AgendaService {
 
-  private url = 'http://localhost:3000/agendas';
+  private url = 'http://localhost:8080/agenda';
 
   constructor(private http: HttpClient) { }
 
@@ -24,7 +24,7 @@ export class AgendaService {
      return this.http.delete<void>(`${this.url}/${agenda.id}`);
   }
 
-  updade(agenda: Agenda):Observable<Agenda> {
+  update(agenda: Agenda):Observable<Agenda> {
     return this.http.put<Agenda>(`${this.url}/${agenda.id}`, agenda);
   }
 

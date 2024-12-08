@@ -43,7 +43,7 @@ export class AgendaFormComponent implements OnInit {
   }
 
   update() {
-    this.service.updade(this.formGroupAgenda.value).subscribe({
+    this.service.update(this.formGroupAgenda.value).subscribe({
       next: () => this.router.navigate(['/agendas'])
     });
   }
