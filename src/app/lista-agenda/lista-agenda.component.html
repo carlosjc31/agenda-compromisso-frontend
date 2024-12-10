@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="display-10">
+    Agenda de Compromisso
+  </div>
+  <button class="btn btn-primary" (click)="create()">Novo Compromisso</button>
+  <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Título</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Data/hora</th>
+            <th scope="col">Local</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let agenda of agendas">
+        <th >{{agenda.id}}</th>
+        <td><a routerLink="agenda/{{agenda.id}}">{{agenda.title}}</a></td>
+        <td>{{agenda.description}}</td>
+        <td>{{agenda.date_hora}}</td>
+        <td>{{agenda.local}}</td>
+        <td><button class="btn btn-danger"(click)="delete(agenda)">Remover</button></td>
+
+    </tbody>
+  </table>
+</div>

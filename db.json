@@ -1,0 +1,46 @@
+{
+  "agendas": [
+    {
+      "id": "1",
+      "title": "Prova do Glauco",
+      "description": "Prova do Glauco vai cair java",
+      "date_hora": "2024-12-02 08:00:00",
+      "local": "lab 6"
+    },
+    {
+      "id": "2",
+      "title": "Prova de estatistica",
+      "description": "Prova do chico ",
+      "date_hora": "2024-12-01 08:00:00",
+      "local": "lab 4"
+    },
+    {
+      "id": "3",
+      "title": "Trabalho sobre agenda",
+      "description": "Testar o trabalho na AWS",
+      "date_hora": "2024-12-10 08:00:00",
+      "local": "Lab. 6"
+    },
+    {
+      "id": "4",
+      "title": "Apresentação de inglês",
+      "description": "Apresentar o objetivo em inglês",
+      "date_hora": "2024-12-11 08:00:00",
+      "local": "Sala 8"
+    },
+    {
+      "id": "5",
+      "title": "Trabalho SOII",
+      "description": "Apresentar o trabalho de SO2",
+      "date_hora": "2024-12-03 08:00:00",
+      "local": "Lab. 6"
+    },
+    {
+      "id": "",
+      "title": "efrgrg",
+      "description": "hbeh",
+      "date_hora": "2024-12-10",
+      "local": "Sala 8"
+    }
+  ]
+}
