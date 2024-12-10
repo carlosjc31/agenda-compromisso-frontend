@@ -8,7 +8,8 @@ import { Agenda } from './agenda';
 })
 export class AgendaService {
 
-  private url = 'https://api.agendamento.duckdns.org/agenda';
+  //private url = 'https://api.agendamento.duckdns.org/agenda';
+  private url = 'http://localhost:3000/agendas';
 
   constructor(private http: HttpClient) { }
 
@@ -32,3 +33,4 @@ export class AgendaService {
     return this.http.post<Agenda>(this.url, agenda);
   }
 }
+
