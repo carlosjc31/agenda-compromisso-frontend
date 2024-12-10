@@ -14,8 +14,6 @@ export class ListaAgendaComponent implements OnInit {
   agendas: Agenda[] = [];
 
 
-
-
   constructor(private agendaService: AgendaService,
               private router: Router
   ) { }
@@ -24,16 +22,17 @@ export class ListaAgendaComponent implements OnInit {
     this.loadAgendas();
   }
 
-  delete(agenda: Agenda) {
+  loadAgendas(){
+    this.agendaService.getAgendas().subscribe({
+      next: data => this.agendas = data
+    })
+  }
+
+    delete(agenda: Agenda) {
     this.agendaService.delete(agenda).subscribe({
       next: () => this.loadAgendas()
     });
     }
-  loadAgendas(){
-    this.agendaService.getAgendas().subscribe({
-      next: agendas => this.agendas = agendas
-    })
-  }
 
   create() {
     this.router.navigate(['agenda']);
