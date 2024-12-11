@@ -8,13 +8,6 @@
       "local": "lab 6"
     },
     {
-      "id": "2",
-      "title": "Prova de estatistica",
-      "description": "Prova do chico ",
-      "date_hora": "2024-12-01 08:00:00",
-      "local": "lab 4"
-    },
-    {
       "id": "3",
       "title": "Trabalho sobre agenda",
       "description": "Testar o trabalho na AWS",
@@ -50,10 +43,10 @@
       "local": "Sala 8"
     },
     {
-      "id": "4d96",
+      "id": "ccad",
       "title": "Entrega do trabalho agenda",
       "description": "Entregar o trabalho fincionando",
-      "date_hora": "2024-12-13",
+      "date_hora": "2024-12-12",
       "local": "Lab. 6"
     }
   ]

@@ -8,7 +8,7 @@ import { Agenda } from './agenda';
 })
 export class AgendaService {
 
-  private apiurl = 'http://localhost:3000/agendas';
+  apiurl = 'http://localhost:8080/agenda';
 
   constructor(private http: HttpClient) { }
 
@@ -20,7 +20,7 @@ export class AgendaService {
     return this.http.delete<void>(`${this.apiurl}/${agenda.id}`);
   }
 
-  getAgendasById(id: number): Observable<Agenda> {
+  getAgendasById(id:number): Observable<Agenda> {
     return this.http.get<Agenda>(`${this.apiurl}/${id}`);
   }
   update(agenda: Agenda): Observable<Agenda> {

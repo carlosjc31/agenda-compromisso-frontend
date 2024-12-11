@@ -21,37 +21,46 @@ export class FormAgendaComponent implements OnInit {
       id: [''],
       title: [''],
       description: [''],
-      date_hora: [''],
+      date: [''],
       local: ['']
-    });
-  }
+    })
+  };
 
   ngOnInit(): void {
-    const id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+    const id = Number(this.activatedRoute.snapshot.paramMap.get("id"));
     if (id != 0) {
-      this.isEditing = true;
+
       this.loadAgendas(id);
+      this.isEditing = true;
     }
 
   }
-  loadAgendas(id: number) {
+  loadAgendas(id: number){
     this.service.getAgendasById(id).subscribe({
-      next: data => this.formGroupAgenda.setValue(data)
-    });
-  }
+      next: data => this.formGroupAgenda.patchValue(data)
+    })
+  };
 
   update(){
-  this.service.update(this.formGroupAgenda.value).subscribe({
-    next: () => this.router.navigate(['agendas'])
-  });
-  }
-
-  save() {
-    const newAgenda =this.formGroupAgenda.value;
-    delete newAgenda.id;
-    this.service.save(newAgenda).subscribe({
+    const titulo = this.formGroupAgenda.get('title')?.value;
+    if(!titulo || titulo.trim().length === "") {
+      alert("Digite o título do compromisso!");
+    }
+    else{
+      this.service.update(this.formGroupAgenda.value).subscribe({
       next: () => this.router.navigate(['agendas'])
+  });
+    }
+  }
+  save() {
+    const titulo = this.formGroupAgenda.get('title')?.value;
+    if(!titulo || titulo.trim().length === "") {
+      alert("Digite o título do compromisso!");
+    }
+    else{
+    this.service.save(this.formGroupAgenda.value).subscribe({
+      next: () => this.router.navigate(['/agendas'])
     });
     }
-
+  }
 }
