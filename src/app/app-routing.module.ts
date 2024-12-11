@@ -5,9 +5,9 @@ import { FormAgendaComponent } from './form-agenda/form-agenda.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'agendas', component: ListaAgendaComponent },
-  { path: 'agendas/:id', component: FormAgendaComponent },
+  { path: 'agenda/:id', component: FormAgendaComponent },
   { path: 'agenda', component: FormAgendaComponent },
   { path: 'home', component: HomeComponent },
 ];

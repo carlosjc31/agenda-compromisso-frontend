@@ -4,7 +4,7 @@
       "id": "1",
       "title": "Prova do Glauco",
       "description": "Prova do Glauco vai cair java",
-      "date_hora": "2024-12-02 08:00:00",
+      "date_hora": "2024-12-12",
       "local": "lab 6"
     },
     {
@@ -22,13 +22,6 @@
       "local": "Lab. 6"
     },
     {
-      "id": "4",
-      "title": "Apresentação de inglês",
-      "description": "Apresentar o objetivo em inglês",
-      "date_hora": "2024-12-11 08:00:00",
-      "local": "Sala 8"
-    },
-    {
       "id": "",
       "title": "efrgrg",
       "description": "hbeh",
@@ -41,6 +34,27 @@
       "description": "hbeh",
       "date_hora": "2024-12-20",
       "local": "Sala 8"
+    },
+    {
+      "id": "",
+      "title": "Entrega do trabalho agenda",
+      "description": "Prova de economia",
+      "date_hora": "2024-12-10",
+      "local": "Sala 8"
+    },
+    {
+      "id": "",
+      "title": "Entrega do trabalho agenda",
+      "description": "Prova de economia",
+      "date_hora": "2024-12-11",
+      "local": "Sala 8"
+    },
+    {
+      "id": "4d96",
+      "title": "Entrega do trabalho agenda",
+      "description": "Entregar o trabalho fincionando",
+      "date_hora": "2024-12-13",
+      "local": "Lab. 6"
     }
   ]
 }

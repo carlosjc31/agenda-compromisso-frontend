@@ -14,8 +14,8 @@ export class FormAgendaComponent implements OnInit {
   isEditing: boolean = false;
 
   constructor(private router: Router,
-              private activetedRoute: ActivatedRoute,
-              private agendaService: AgendaService,
+              private activatedRoute: ActivatedRoute,
+              private service: AgendaService,
               private formBuilder: FormBuilder) {
     this.formGroupAgenda = this.formBuilder.group({
       id: [''],
@@ -27,7 +27,7 @@ export class FormAgendaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const id = Number(this.activetedRoute.snapshot.paramMap.get('id'));
+    const id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
     if (id != 0) {
       this.isEditing = true;
       this.loadAgendas(id);
@@ -35,19 +35,21 @@ export class FormAgendaComponent implements OnInit {
 
   }
   loadAgendas(id: number) {
-    this.agendaService.getAgendasById(id).subscribe({
+    this.service.getAgendasById(id).subscribe({
       next: data => this.formGroupAgenda.setValue(data)
     });
   }
 
   update(){
-  this.agendaService.update(this.formGroupAgenda.value).subscribe({
+  this.service.update(this.formGroupAgenda.value).subscribe({
     next: () => this.router.navigate(['agendas'])
   });
   }
 
   save() {
-    this.agendaService.save(this.formGroupAgenda.value).subscribe({
+    const newAgenda =this.formGroupAgenda.value;
+    delete newAgenda.id;
+    this.service.save(newAgenda).subscribe({
       next: () => this.router.navigate(['agendas'])
     });
     }

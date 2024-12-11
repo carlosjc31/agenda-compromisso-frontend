@@ -16,12 +16,11 @@
     <tbody>
       <tr *ngFor="let agenda of agendas">
         <th >{{agenda.id}}</th>
-        <td><a routerLink="agenda/{{agenda.id}}">{{agenda.title}}</a></td>
+        <td><a routerLink="agendas/{{agenda.id}}">{{agenda.title}}</a></td>
         <td>{{agenda.description}}</td>
         <td>{{agenda.date_hora}}</td>
         <td>{{agenda.local}}</td>
         <td><button class="btn btn-danger"(click)="delete(agenda)">Remover</button></td>
-
-    </tbody>
+        <td><button class="btn btn-primary"(click)="edit(agenda.id)">Editar</button></td>
   </table>
 </div>

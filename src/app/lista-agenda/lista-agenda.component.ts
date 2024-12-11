@@ -11,10 +11,11 @@ import { Router } from '@angular/router';
 export class ListaAgendaComponent implements OnInit {
 
 
+
   agendas: Agenda[] = [];
 
 
-  constructor(private agendaService: AgendaService,
+  constructor(private service: AgendaService,
               private router: Router
   ) { }
 
@@ -23,13 +24,13 @@ export class ListaAgendaComponent implements OnInit {
   }
 
   loadAgendas(){
-    this.agendaService.getAgendas().subscribe({
+    this.service.getAgendas().subscribe({
       next: data => this.agendas = data
     })
   }
 
     delete(agenda: Agenda) {
-    this.agendaService.delete(agenda).subscribe({
+    this.service.delete(agenda).subscribe({
       next: () => this.loadAgendas()
     });
     }
@@ -38,4 +39,7 @@ export class ListaAgendaComponent implements OnInit {
     this.router.navigate(['agenda']);
     }
 
+    edit(id: number) {
+      this.router.navigate(['agenda', id]);
+      }
 }
