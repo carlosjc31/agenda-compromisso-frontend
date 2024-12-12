@@ -8,27 +8,27 @@ import { Agenda } from './agenda';
 })
 export class AgendaService {
 
-  apiurl = 'http://localhost:8080/agenda';
+  url = 'https://api.agendamento.duckdns.org/agenda';
 
   constructor(private http: HttpClient) { }
 
   getAgendas(): Observable<Agenda[]> {
-    return this.http.get<Agenda[]>(this.apiurl);
+    return this.http.get<Agenda[]>(this.url);
   }
 
   delete(agenda: Agenda) {
-    return this.http.delete<void>(`${this.apiurl}/${agenda.id}`);
+    return this.http.delete<void>(`${this.url}/${agenda.id}`);
   }
 
   getAgendasById(id:number): Observable<Agenda> {
-    return this.http.get<Agenda>(`${this.apiurl}/${id}`);
+    return this.http.get<Agenda>(`${this.url}/${id}`);
   }
   update(agenda: Agenda): Observable<Agenda> {
-    return this.http.put<Agenda>(`${this.apiurl}/${agenda.id}`, agenda);
+    return this.http.put<Agenda>(`${this.url}/${agenda.id}`, agenda);
   }
 
   save(agenda: Agenda): Observable<Agenda> {
-    return this.http.post<Agenda>(this.apiurl, agenda);
+    return this.http.post<Agenda>(this.url, agenda);
   }
 
 }
